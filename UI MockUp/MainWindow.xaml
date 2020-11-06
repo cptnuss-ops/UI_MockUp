@@ -1,0 +1,42 @@
+﻿<Window x:Class="UI_MockUp.MainWindow"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:UI_MockUp"
+        mc:Ignorable="d"
+        Title="Modulhandbuch Manager">
+    <Grid>
+        <StackPanel VerticalAlignment="Center">
+        <StackPanel MaxWidth="500">
+            <materialDesign:Card Padding="32" Margin="16">
+                <TextBlock Style="{DynamicResource MaterialDesignHeadline6TextBlock}" TextAlignment="Center">LogIn Page MockUp</TextBlock>
+            </materialDesign:Card>
+        </StackPanel>
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+        <Border BorderBrush="LightGray" BorderThickness="2" >
+                <StackPanel VerticalAlignment="Center" MaxWidth="325" Margin="5,5,5,5" >
+            <Label Content="Username" HorizontalAlignment="Center"/>
+            <TextBox HorizontalAlignment="Center" MinWidth="300" TextAlignment="Left" VerticalContentAlignment="Bottom" Style="{DynamicResource MaterialDesignTextBox}" MinHeight="36"/>
+            <Label Content="Passwort:" HorizontalAlignment="Center" Margin="0,15,0,0"/>
+            <PasswordBox Style="{DynamicResource MaterialDesignFloatingHintPasswordBox}" MaxWidth="300" Margin="0,0,0,25"/>
+        </StackPanel>
+        </Border>
+        </StackPanel>
+        <StackPanel VerticalAlignment="Bottom" Margin="0,25,0,0">
+            <Button Style="{DynamicResource MaterialDesignFlatAccentBgButton}" Content="Login" Margin="0,0,0,50" MaxWidth="300" Background="CadetBlue" BorderBrush="CadetBlue"/>
+        </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>
+   
+       
+        
