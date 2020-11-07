@@ -27,7 +27,7 @@
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <ListBox x:Name="ModuleList" Grid.Row="1" Grid.RowSpan="3" Grid.Column="0" Style="{DynamicResource MaterialDesignListBox}" Margin="5,5,5,5" ScrollViewer.VerticalScrollBarVisibility="Visible">
+        <ListBox x:Name="ModuleList" Grid.Row="1" Grid.RowSpan="3" Grid.Column="0" Style="{DynamicResource MaterialDesignListBox}" Margin="5,5,5,5" ScrollViewer.VerticalScrollBarVisibility="Visible" SelectionChanged="OnSelectionChange">
             <ListBox.ItemsPanel>
                 <ItemsPanelTemplate>
                     <StackPanel Orientation="Vertical"/>
@@ -39,6 +39,22 @@
             <Button Style="{DynamicResource MaterialDesignFloatingActionLightButton}" Content="Refresh" Click="OnClickRefreshModuleList" Margin="10"/>
             <Button Style="{DynamicResource MaterialDesignFloatingActionLightButton}" Content="Close" Click="OnClickClose" Margin="10"/>
         </StackPanel>
-        
+        <TabControl Grid.Row="1" Grid.RowSpan="3" Grid.Column="1" Grid.ColumnSpan="2">
+            <TabItem Header="Allgemein">
+                <StackPanel>
+                    <DataGrid x:Name="dataGridAllgemein" VerticalScrollBarVisibility="Visible"/>
+                </StackPanel>
+            </TabItem>
+            <TabItem Header="Inhaltliche Beschreibung">
+                <Label Content="test"/>
+            </TabItem>
+            <TabItem Header="Art und Form der Prüfung">
+                <Label Content="test"/>
+            </TabItem>
+            <TabItem Header="Unterrichtsform und Literaturangaben">
+                <Label Content="test"/>
+            </TabItem>
+
+        </TabControl>
     </Grid>
 </Window>

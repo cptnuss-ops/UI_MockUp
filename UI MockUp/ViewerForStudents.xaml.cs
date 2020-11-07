@@ -20,6 +20,7 @@ namespace UI_MockUp
     /// </summary>
     public partial class ViewerForStudents : Window
     {
+        private DataTable dataTable = new DataTable();       
         public ViewerForStudents()
         {
             InitializeComponent();
@@ -27,18 +28,33 @@ namespace UI_MockUp
 
         private void OnClickRefreshModuleList(object sender, RoutedEventArgs e)
         {
-            DataTable dataTable = SQLHandler.ReturnModule();
+            dataTable = SQLHandler.ReturnModule();
             ModuleList.Items.Clear();
 
             for (int i = 0; i < dataTable.Rows.Count; i++)
             {
                 ModuleList.Items.Add(dataTable.Rows[i][0]);
-            }
+            }           
         }
 
         private void OnClickClose(object sender, RoutedEventArgs e)
         {
             Application.Current.Shutdown();
+        }
+
+        private void SetDataGrid(DataTable dataTable)
+        {            
+            dataGridAllgemein.ItemsSource = dataTable.DefaultView;
+        }
+
+        private void OnSelectionChange(object sender, SelectionChangedEventArgs e)
+        {           
+            var SelectedItemInList = ModuleList.SelectedItem.ToString();
+            DataRow[] selectedModul = dataTable.Select("Modulbezeichnung LIKE '" + SelectedItemInList + "%'");
+            var finaltest = selectedModul[0].ItemArray[1];
+            int Modulnummer = Convert.ToInt32(finaltest);
+            SQLHandler.GetModulInfo(Modulnummer);
+            SetDataGrid(SQLHandler.dataTable1);
         }
     }
 }
