@@ -24,5 +24,10 @@ namespace UI_MockUp
         {
             InitializeComponent();
         }
+
+        private void OnClickLogInAsStudent(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

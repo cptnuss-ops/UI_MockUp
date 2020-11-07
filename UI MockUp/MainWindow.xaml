@@ -13,28 +13,49 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:UI_MockUp"
         mc:Ignorable="d"
-        Title="Modulhandbuch Manager">
+        Title="Modulhandbuch Manager"
+        Height="800"
+        Width="1200">
     <Grid>
-        <StackPanel VerticalAlignment="Center">
-        <StackPanel MaxWidth="500">
-            <materialDesign:Card Padding="32" Margin="16">
+        <Grid.ColumnDefinitions>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+        </Grid.RowDefinitions>
+        <StackPanel x:Name="Banner" Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <materialDesign:Card Padding="32" Margin="16" MaxWidth="1600">
                 <TextBlock Style="{DynamicResource MaterialDesignHeadline6TextBlock}" TextAlignment="Center">LogIn Page MockUp</TextBlock>
             </materialDesign:Card>
         </StackPanel>
-        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
-        <Border BorderBrush="LightGray" BorderThickness="2" >
+        <Grid Grid.Row="1">
+        <StackPanel x:Name="ForOrientation" Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
+        <StackPanel x:Name="StudentLogIn"  VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0,0,50,0">
+            <Border BorderBrush="LightGray" BorderThickness="2" >
                 <StackPanel VerticalAlignment="Center" MaxWidth="325" Margin="5,5,5,5" >
-            <Label Content="Username" HorizontalAlignment="Center"/>
-            <TextBox HorizontalAlignment="Center" MinWidth="300" TextAlignment="Left" VerticalContentAlignment="Bottom" Style="{DynamicResource MaterialDesignTextBox}" MinHeight="36"/>
-            <Label Content="Passwort:" HorizontalAlignment="Center" Margin="0,15,0,0"/>
-            <PasswordBox Style="{DynamicResource MaterialDesignFloatingHintPasswordBox}" MaxWidth="300" Margin="0,0,0,25"/>
+                    <TextBlock Text="Zum Betrachten des Modulplans ist kein Login erfoderlich" HorizontalAlignment="Center" MinWidth="300" TextWrapping="WrapWithOverflow" TextAlignment="Center"/>
+                </StackPanel>
+            </Border>
+            <StackPanel Margin="0,25,0,0" Height="35">
+                <Button Style="{DynamicResource MaterialDesignFlatAccentBgButton}" Content="Login" Margin="0,0,0,50" MaxWidth="300" Background="CadetBlue" BorderBrush="CadetBlue" Click="OnClickLogInAsStudent"/>
+            </StackPanel>
         </StackPanel>
-        </Border>
+        <StackPanel x:Name="DozentenLogIn" Grid.Row="1" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="50,0,0,0">
+            <Border BorderBrush="LightGray" BorderThickness="2" >
+                <StackPanel VerticalAlignment="Center" MaxWidth="325" Margin="5,5,5,5" >
+                    <Label Content="Username" HorizontalAlignment="Center"/>
+                    <TextBox HorizontalAlignment="Center" MinWidth="300" TextAlignment="Left" VerticalContentAlignment="Bottom" Style="{DynamicResource MaterialDesignTextBox}" MinHeight="36"/>
+                    <Label Content="Passwort:" HorizontalAlignment="Center" Margin="0,15,0,0"/>
+                    <PasswordBox Style="{DynamicResource MaterialDesignFloatingHintPasswordBox}" MaxWidth="300" Margin="0,0,0,25"/>
+                </StackPanel>
+            </Border>
+            <StackPanel VerticalAlignment="Bottom" Margin="0,25,0,0" Height="35">
+                <Button Style="{DynamicResource MaterialDesignFlatAccentBgButton}" Content="Login" Margin="0,0,0,50" MaxWidth="300" Background="CadetBlue" BorderBrush="CadetBlue" Click="OnClickLogInAsLecturer"/>
+            </StackPanel>
         </StackPanel>
-        <StackPanel VerticalAlignment="Bottom" Margin="0,25,0,0">
-            <Button Style="{DynamicResource MaterialDesignFlatAccentBgButton}" Content="Login" Margin="0,0,0,50" MaxWidth="300" Background="CadetBlue" BorderBrush="CadetBlue"/>
         </StackPanel>
-        </StackPanel>
+        </Grid>
     </Grid>
 </Window>
    
