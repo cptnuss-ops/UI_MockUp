@@ -66,6 +66,7 @@
     <Compile Include="LogInPage.xaml.cs">
       <DependentUpon>LogInPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="SQLHandler.cs" />
     <Compile Include="ViewerForStudents.xaml.cs">
       <DependentUpon>ViewerForStudents.xaml</DependentUpon>
     </Compile>
