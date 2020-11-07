@@ -10,29 +10,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace UI_MockUp
 {
     /// <summary>
-    /// Interaktionslogik für MainWindow.xaml
+    /// Interaktionslogik für ViewerForStudents.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class ViewerForStudents : Window
     {
-        public MainWindow()
+        public ViewerForStudents()
         {
             InitializeComponent();
-            OpenLogIn();
         }
-
-        public void OpenLogIn()
-        {
-            LogInPage logInPage = new LogInPage();
-            logInPage.Show();
-            logInPage.Focus();
-            this.Visibility = Visibility.Hidden;             
-        }
-                
     }
 }
